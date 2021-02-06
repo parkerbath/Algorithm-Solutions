@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+     //edge case
+    if (nums.length == 0) {
+        return 0;
+    } 
+    let i = 0;
+    //compare two elements and check if they are the same and if they are, increment i
+    for (let j = 1; j < nums.length; j++) {
+        if (nums[j] != nums[i]) {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    return i + 1;
+};
